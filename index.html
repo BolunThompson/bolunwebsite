@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+a.link-button, a.link-button:hover, a.link-button:focus, a.link-button:active {
+    text-decoration: none;
+    color: inherit;
+}
+.page {
+    display: flex;
+}
+
+.box {
+    font-family: 'Times New Roman', serif;
+    background-color: #c0c0c0;
+    border-style: outset;
+    border-color: white black black white;
+    padding-right: 1px;
+}
+.welcome {
+    margin:10px;
+    width:500px;
+}
+@media screen and (max-width: 600px) {
+  .welcome {
+    width: 84%;
+  }
+}
+.bar {
+    display: flex;
+    font-family: 'Calibri', sans-serif;
+    color: white;
+    background-color: #0000a8;
+    padding: 1px;
+    justify-content: space-between;
+}
+.box-content {
+    padding: 15px;
+}
+.flex-content {
+    display: flex;
+    justify-content: space-between;
+}
+.picture {
+    background-image: url("headshot.jpg");
+    background-color: #ffffbc;
+    border-style: inset;
+    border-color: eeeeee;
+    width: calc(100% - 115px);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 0;
+    padding-top: 63.05%;
+}
+.picture:hover {
+    background-image: url("headshot2.jpg");
+    transition-delay:3s;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.button {
+    font-family: 'Calibri', sans-serif;
+    color: black;
+    background-color: #c0c0c0ff;
+    border-style: outset;
+    border-color: white black black white;
+    padding: 1px;
+    text-align: center;
+    position: relative;
+}
+.button:active {
+    border-style: inset;
+    border-color: black white white black;
+}
+.select:active {
+    border-style: solid;
+    border-color: black;
+}
+.selected {
+    border-color: black;
+}
+.select-inner {
+    border-style: none;
+    border-radius: 2.5px;
+    position: absolute;
+    top: 2.5px;
+    bottom: 2.5px;
+    left: 2.5px;
+    right: 2.5px;
+}
+.select:active > .select-inner {
+    border-style: dotted;
+}
+.selected-inner {
+    border-style: dotted;
+    border-radius: 2.5px;
+    position: absolute;
+    top: 2.5px;
+    bottom: 2.5px;
+    left: 2.5px;
+    right: 2.5px;
+}
+
+.footer {
+    position: fixed;
+    font-family: 'Calibri', sans-serif;
+    background-color: #c0c0c0;
+    border-style: outset outset none none;
+    border-color: white black black white;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+}
+.footer-button {
+    font-family: 'Calibri', sans-serif;
+    background-color: #dee2e3;
+    border-style: inset;
+    border-color: black white white black;
+    padding: 1px;
+    margin: 2px;
+}
+.footer-time {
+    font-family: 'Calibri', sans-serif;
+    background-color: #c0c0c0;
+    border-style: inset;
+    border-color: #eeeeee;
+    padding: 1px;
+    margin: 2px;
+    text-align: center;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+ShowTime();
+});
+function ShowTime() {
+var dt = new Date();
+document.getElementById("lblTime").innerHTML = dt.toLocaleTimeString([], { hour: 'numeric', hour12: true, minute: 'numeric' });
+window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Sec
+}
+</script>
+</head>
+<body style="background-color:#008080ff; margin:0">
+<form id="form1" runat="server">
+
+<div class="page">
+
+<div class="box welcome">
+<div class="bar">Welcome <a class="link-button" style="margin-right:2px;" href="empty.html"><div class="button" style="padding:0px; width:17px; margin:1px; font-size:10px"><b>✖</b></div></a> </div>
+
+<div class="box-content">
+<b><span style="font-size:30px">Welcome to <span style="font-family:'Arial Black'; font-size:27px">bolun</span><span style="color: white">.dev</span></span></b>
+
+<div class="flex-content" style="margin-top:10px">
+
+<div class="picture"></div>
+
+<div class="buttons" style="width:100px">
+<a class="link-button" href="about.html"><div class="button select"><div class="select-inner"></div>About</div></a>
+<a class="link-button" href="blog.html"><div class="button select"><div class="select-inner"></div>Blog</div></a>
+<div class="button select"><div class="select-inner"></div>Work</div>
+</div> <!-- end buttons -->
+
+</div> <!-- end flex-content -->
+</div> <!-- end box-content -->
+</div> <!-- end box -->
+
+</div> <!-- end page -->
+
+<div class="footer">
+<div class="footer-button" style="width:150px"><b>Welcome</b></div>
+<div style="flex-grow:1"></div>
+<div class="footer-time" style="width:70px"><label id="lblTime"></label></div>
+</div>
+
+</body>
+</html>

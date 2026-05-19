@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icons {
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+}
+.icon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Calibri', sans-serif;
+    color: white;
+    text-align: center;
+}
+.icon-img {
+    width: 80px;
+    image-rendering: pixelated;
+}
+.icon-img-hidden {
+    position: fixed;
+    width: 80px;
+    image-rendering: pixelated;
+    opacity: 0;
+}
+.icon:active > .icon-img-hidden {
+    opacity: 1;
+}
+.icon:active > .icon-txt {
+    background-color: #0000a8;
+    outline: dotted white;
+}
+
+.footer {
+    position: fixed;
+    font-family: 'Calibri', sans-serif;
+    background-color: #c0c0c0;
+    border-style: outset outset none none;
+    border-color: white black black white;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+}
+.footer-button {
+    font-family: 'Calibri', sans-serif;
+    background-color: #dee2e3;
+    border-style: inset;
+    border-color: black white white black;
+    padding: 1px;
+    margin: 2px;
+}
+.footer-time {
+    font-family: 'Calibri', sans-serif;
+    background-color: #c0c0c0;
+    border-style: inset;
+    border-color: #eeeeee;
+    padding: 1px;
+    margin: 2px;
+    text-align: center;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+ShowTime();
+});
+function ShowTime() {
+var dt = new Date();
+document.getElementById("lblTime").innerHTML = dt.toLocaleTimeString([], { hour: 'numeric', hour12: true, minute: 'numeric' });
+window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Sec
+}
+</script>
+</head>
+<body style="background-color:#008080ff; margin:0">
+<form id="form1" runat="server">
+
+<div class="icons">
+<a href="index.html"><div class="icon"><img class="icon-img" src="bosniper.png"><img class="icon-img-hidden" src="bosniper-select.png"><div class="icon-txt">Bolun Thompson</div></div></a><br>
+<a href="credits.html"><div class="icon" style="margin-top: 10px"><img class="icon-img" src="scroll.png"><img class="icon-img-hidden" src="scroll-select.png"><div class="icon-txt">credits.txt</div></div></a>
+</div>
+
+<div class="footer">
+<div style="flex-grow:1"></div>
+<div class="footer-time" style="width:70px"><label id="lblTime"></label></div>
+</div>
+
+</body>
+</html>
