@@ -48,7 +48,7 @@ ul li:before {
     border-color: white black black white;
 }
 .filebox::-webkit-scrollbar-button:single-button:vertical:decrement {
-    background-image: url('uparrow.png');
+    background-image: url('images/uparrow.png');
     background-size: 8px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@ ul li:before {
     border-color: #9b9ea3;
 }
 .filebox::-webkit-scrollbar-button:single-button:vertical:increment {
-    background-image: url('downarrow.png');
+    background-image: url('images/downarrow.png');
     background-size: 8px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -113,8 +113,9 @@ ul li:before {
     border-style: inset;
     padding-left: 30px;
     padding-right: 30px;
+    margin: 5px;
     overflow: auto;
-    height: 80vh;
+    height: 70vh;
 }
 .picture {
     background-color: #ffffbc;
@@ -122,7 +123,7 @@ ul li:before {
     border-color: #eeeeee;
 }
 .picture-headshot {
-    background-image: url("headshot.jpg");
+    background-image: url("images/headshot.jpg");
     width: calc(100% - 115px);
     background-size: cover;
     background-repeat: no-repeat;
@@ -131,7 +132,7 @@ ul li:before {
     padding-top: 63.05%;
 }
 .picture-headshot:hover {
-    background-image: url("headshot2.jpg");
+    background-image: url("images/headshot2.jpg");
     transition-delay:3s;
 }
 .buttons {
@@ -180,6 +181,11 @@ ul li:before {
     bottom: 2.5px;
     left: 2.5px;
     right: 2.5px;
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 .icons {
     display: flex;
@@ -253,13 +259,17 @@ ul li:before {
 }
 
 .mini-icon {
+    position: absolute;
     image-rendering: pixelated;
-    object-fit: contain;
-    margin-left: 2px;
-    margin-right: 2px;
+    width: 20px;
+    padding: 1px;
+    margin-left: 4px;
+}
+.mini-title {
+    margin-left: 25px;
 }
 </style>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-4.0.0.slim.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 ShowTime();
@@ -291,6 +301,11 @@ window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Se
 <a class="link-button" href="about.html"><div class="button select"><div class="select-inner"></div>About</div></a>
 <a class="link-button" href="blog.html"><div class="button select selected"><div class="select-inner selected-inner"></div>Blog</div></a>
 <div class="button select"><div class="select-inner"></div>Work</div>
+<div style="flex-grow:1"></div>
+<div class="socials">
+<a class="link-button" href="https://github.com/bolunthompson" target="_blank" rel="noopener noreferrer" style="font-size:0"><div class="button select"><img style="height:100%"; src="images/github.svg"></div></a>
+<a class="link-button" href="https://linkedin.com/in/bolunthompson" target="_blank" rel="noopener noreferrer" style="font-size:0"><div class="button select"><img style="height:100%"; src="images/linkedin.svg"></div></a>
+</div> <!-- end socials -->
 </div> <!-- end buttons -->
 
 </div> <!-- end flex-content -->
@@ -299,14 +314,14 @@ window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Se
 </div>
 
 <div class="box file">
-<div class="bar"><img class="mini-icon" src="fileicon.png">Blog<div style="flex-grow:1"></div><a class="link-button" style="margin-right:2px;" href="index.html"><div class="button" style="padding:0px; width:17px; margin:1px; font-size:10px"><b>✖</b></div></a> </div>
+<div class="bar"><img class="mini-icon" src="images/fileicon.png"><div class="mini-title">Blog</div><div style="flex-grow:1"></div><a class="link-button" style="margin-right:2px;" href="index.html"><div class="button" style="padding:0px; width:17px; margin:1px; font-size:10px"><b>✖</b></div></a> </div>
 
 <div class="filebox">
 <div class="icons">
 
-<a class="link-button" href="index.html"><div class="icon"><img class="icon-img" src="scroll.png"><img class="icon-img-hidden" src="scroll-select.png"><div class="icon-txt">KVM Sectorlisp</div></div></a><br>
+<a class="link-button" href="blog-kvm_sectorlisp.html"><div class="icon"><img class="icon-img" src="images/paper.png"><img class="icon-img-hidden" src="images/paper-select.png"><div class="icon-txt">KVM Sectorlisp</div></div></a><br>
 
-<a class="link-button" href="index.html"><div class="icon"><img class="icon-img" src="scroll.png"><img class="icon-img-hidden" src="scroll-select.png"><div class="icon-txt">Hello, world!</div></div></a><br>
+<a class="link-button" href="blog-hello_world.html"><div class="icon"><img class="icon-img" src="images/paper.png"><img class="icon-img-hidden" src="images/paper-select.png"><div class="icon-txt">Hello, world!</div></div></a><br>
 
 </div> <!-- end icons -->
 </div> <!-- end filebox -->
@@ -316,7 +331,7 @@ window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Se
 </div> <!-- end page -->
 
 <div class="footer">
-<div class="footer-button" style="width:150px"><img class="mini-icon" src="fileicon.png"><b>Blog</b></div>
+<div class="footer-button" style="width:150px"><img class="mini-icon" src="images/fileicon.png"><div class="mini-title"><b>Blog</b></div></div>
 <div style="flex-grow:1"></div>
 <div class="footer-time" style="width:70px"><label id="lblTime"></label></div>
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-a.link-button, a.link-button:hover, a.link-button:focus {
+a.link-button, a.link-button:hover, a.link-button:focus, a.link-button:active {
     text-decoration: none;
     color: inherit;
 }
@@ -45,7 +45,7 @@ ul li:before {
     border-color: white black black white;
 }
 .about-box::-webkit-scrollbar-button:single-button:vertical:decrement {
-    background-image: url('uparrow.png');
+    background-image: url('images/uparrow.png');
     background-size: 8px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -58,7 +58,7 @@ ul li:before {
     border-color: #9b9ea3;
 }
 .about-box::-webkit-scrollbar-button:single-button:vertical:increment {
-    background-image: url('downarrow.png');
+    background-image: url('images/downarrow.png');
     background-size: 8px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -78,8 +78,11 @@ ul li:before {
 }
 .about-box {
     min-width: 300px;
-    max-height: 80vh;
+    max-height: 70vh;
     overflow: auto;
+    border-style: solid;
+    border-color: black white white black;
+    margin: 5px;
 }
 @media screen and (max-width: 864px) {
   .welcome {
@@ -117,7 +120,7 @@ ul li:before {
     border-color: eeeeee;
 }
 .picture-headshot {
-    background-image: url("headshot.jpg");
+    background-image: url("images/headshot.jpg");
     width: calc(100% - 115px);
     background-size: cover;
     background-repeat: no-repeat;
@@ -126,7 +129,7 @@ ul li:before {
     padding-top: 63.05%;
 }
 .picture-headshot:hover {
-    background-image: url("headshot2.jpg");
+    background-image: url("images/headshot2.jpg");
     transition-delay:3s;
 }
 .buttons {
@@ -176,6 +179,11 @@ ul li:before {
     left: 2.5px;
     right: 2.5px;
 }
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
 .logo {
     display: flex;
@@ -184,6 +192,19 @@ ul li:before {
 .logo-img {
     display: block;
     max-height: 50px;
+}
+.box-footer {
+    display: flex;
+    font-family: 'Calibri', sans-serif;
+    background-color: #c0c0c0;
+    padding: 1px;
+    margin: 2px;
+}
+.box-toe {
+    display: flex;
+    flex-grow: 1;
+    border-style: inset;
+    border-color: white;
 }
 
 .footer {
@@ -253,6 +274,11 @@ window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Se
 <a class="link-button" href="about.html"><div class="button select selected"><div class="select-inner selected-inner"></div>About</div></a>
 <a class="link-button" href="blog.html"><div class="button select"><div class="select-inner"></div>Blog</div></a>
 <div class="button select"><div class="select-inner"></div>Work</div>
+<div style="flex-grow:1"></div>
+<div class="socials">
+<a class="link-button" href="https://github.com/bolunthompson" target="_blank" rel="noopener noreferrer" style="font-size:0"><div class="button select"><img style="height:100%"; src="images/github.svg"></div></a>
+<a class="link-button" href="https://linkedin.com/in/bolunthompson" target="_blank" rel="noopener noreferrer" style="font-size:0"><div class="button select"><img style="height:100%"; src="images/linkedin.svg"></div></a>
+</div> <!-- end socials -->
 </div> <!-- end buttons -->
 
 </div> <!-- end flex-content -->
@@ -261,7 +287,7 @@ window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Se
 </div>
 
 <div class="box about">
-<div class="bar"><img class="mini-icon" src="abouticon.png">About<div style="flex-grow:1"></div><a class="link-button" style="margin-right:2px;" href="index.html"><div class="button" style="padding:0px; width:17px; margin:1px; font-size:10px"><b>✖</b></div></a> </div>
+<div class="bar"><img class="mini-icon" src="images/abouticon.png">About<div style="flex-grow:1"></div><a class="link-button" style="margin-right:2px;" href="index.html"><div class="button" style="padding:0px; width:17px; margin:1px; font-size:10px"><b>✖</b></div></a> </div>
 
 <div class="box-content about-box">
 <h1><b>About Me</b></h1>
@@ -287,7 +313,7 @@ window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Se
 
 <h1><b>Education</b></h1>
 <div class="logo">
-    <div style="align-content: center;"><div class="picture"><img class="logo-img" src="ucla.jpg"></div></div>
+    <div style="align-content: center;"><div class="picture"><img class="logo-img" src="images/ucla.jpg"></div></div>
     <div>
         <p><b><span style="font-size:20px">UCLA</span></b><br>
         Computer Science • Expected Jun 2028</p>
@@ -297,19 +323,20 @@ window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Se
 
 <h1><b>Experience</b></h1>
 <div class="logo">
-    <div style="align-content: center;"><div class="picture"><img class="logo-img" src="pash.jpg"></div></div>
+    <div style="align-content: center;"><div class="picture"><img class="logo-img" src="images/pash.jpg"></div></div>
     <p><b><span style="font-size:20px">Programmable Software Systems Lab • UCLA</span></b><br>
     Research Assistant • Nov 2024 - Present<br>
     Advisor: <a href="https://angelhof.github.io/">Konstantinos Kallas</a></p>
 </div>
 </div> <!-- end box content -->
 
+<div class="box-footer"><div class="box-toe" style="flex-grow:3"></div><div class="box-toe" style="flex-grow:3"></div><div class="box-toe" style="flex-grow:1"><img class="mini-icon" src="images/abouticon.png">A. Bolun Thompson</div></div>
 </div> <!-- end box about -->
 
 </div> <!-- end page -->
 
 <div class="footer">
-<div class="footer-button" style="width:150px"><img class="mini-icon" src="abouticon.png"><b>About</b></div>
+<div class="footer-button" style="width:150px"><img class="mini-icon" src="images/abouticon.png"><b>About</b></div>
 <div style="flex-grow:1"></div>
 <div class="footer-time" style="width:70px"><label id="lblTime"></label></div>
 </div>
