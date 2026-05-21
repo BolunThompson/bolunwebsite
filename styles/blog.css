@@ -19,6 +19,7 @@
 }
 .blogbox {
     background-color: #ffffd0;
+    font-family: 'Calibri', sans-serif;
     border-color: black white white black;
     border-style: inset;
     padding: 0px;
