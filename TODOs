@@ -1,0 +1,2 @@
+- Add GH Actions CI for deployment.
+- Add GH actions CI for busting the cloudflare cache.
